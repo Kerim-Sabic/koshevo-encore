@@ -75,7 +75,7 @@ const ShareEvent = () => {
                   onClick={copyLink}
                   className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-body text-muted-foreground hover:text-foreground hover:bg-secondary/50 transition-colors"
                 >
-                  {copied ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+                  {copied ? <Check className="w-4 h-4 text-primary" /> : <Copy className="w-4 h-4" />}
                   {copied ? "Copied!" : "Copy Link"}
                 </button>
 
