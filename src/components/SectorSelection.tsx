@@ -17,6 +17,7 @@ const badgeIcons: Record<string, typeof Star> = {
 
 const SectorSelection = ({ onProceed }: SectorSelectionProps) => {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const { data: sectors = [], isLoading } = useSectors();
 
   const setQty = (id: string, max: number, delta: number) => {
     setQuantities((prev) => ({
