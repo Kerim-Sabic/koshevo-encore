@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Ticket, MapPin, Shield, Smartphone, Zap, Mail } from "lucide-react";
 import { EVENT_CONFIG } from "@/config/event";
 import CountdownTimer from "./CountdownTimer";
+import ShareEvent from "./ShareEvent";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
@@ -53,7 +54,7 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
@@ -72,6 +73,7 @@ const Hero = () => {
               <MapPin className="inline-block w-4 h-4 mr-2 -mt-0.5" />
               View Sectors
             </motion.button>
+            <ShareEvent />
           </div>
 
           {/* Trust badges */}

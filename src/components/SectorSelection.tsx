@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Minus, Plus, Ticket, Star, TrendingUp, Award } from "lucide-react";
-import { SECTORS, EVENT_CONFIG, type Sector } from "@/config/event";
+import { Minus, Plus, Ticket, Star, TrendingUp, Award, Loader2 } from "lucide-react";
+import { EVENT_CONFIG, type Sector } from "@/config/event";
+import { useSectors } from "@/hooks/useSectors";
 import stadiumMap from "@/assets/stadium-map.jpg";
 
 interface SectorSelectionProps {
@@ -16,6 +17,7 @@ const badgeIcons: Record<string, typeof Star> = {
 
 const SectorSelection = ({ onProceed }: SectorSelectionProps) => {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
+  const { data: sectors = [], isLoading } = useSectors();
 
   const setQty = (id: string, max: number, delta: number) => {
     setQuantities((prev) => ({
@@ -41,8 +43,11 @@ const SectorSelection = ({ onProceed }: SectorSelectionProps) => {
         </div>
 
         {/* Sector cards */}
+        {isLoading && (
+          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 text-primary animate-spin" /></div>
+        )}
         <div className="grid gap-4 sm:gap-5 max-w-3xl mx-auto">
-          {SECTORS.map((sector, i) => {
+          {sectors.map((sector, i) => {
             const qty = quantities[sector.id] || 0;
             const BadgeIcon = sector.badge ? badgeIcons[sector.badge] : null;
             return (
