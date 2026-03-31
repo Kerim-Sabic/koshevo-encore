@@ -4,7 +4,6 @@ import { EVENT_CONFIG } from "@/config/event";
 import CountdownTimer from "./CountdownTimer";
 import ShareEvent from "./ShareEvent";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const scrollToSectors = () => {
