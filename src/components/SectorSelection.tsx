@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Minus, Plus, Ticket, Star, TrendingUp, Award } from "lucide-react";
-import { SECTORS, EVENT_CONFIG, type Sector } from "@/config/event";
+import { Minus, Plus, Ticket, Star, TrendingUp, Award, Loader2 } from "lucide-react";
+import { EVENT_CONFIG, type Sector } from "@/config/event";
+import { useSectors } from "@/hooks/useSectors";
 import stadiumMap from "@/assets/stadium-map.jpg";
 
 interface SectorSelectionProps {
