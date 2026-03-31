@@ -43,8 +43,11 @@ const SectorSelection = ({ onProceed }: SectorSelectionProps) => {
         </div>
 
         {/* Sector cards */}
+        {isLoading && (
+          <div className="flex justify-center py-12"><Loader2 className="w-6 h-6 text-primary animate-spin" /></div>
+        )}
         <div className="grid gap-4 sm:gap-5 max-w-3xl mx-auto">
-          {SECTORS.map((sector, i) => {
+          {sectors.map((sector, i) => {
             const qty = quantities[sector.id] || 0;
             const BadgeIcon = sector.badge ? badgeIcons[sector.badge] : null;
             return (
