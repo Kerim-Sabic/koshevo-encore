@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Ticket, MapPin, Shield, Smartphone, Zap, Mail } from "lucide-react";
 import { EVENT_CONFIG } from "@/config/event";
 import CountdownTimer from "./CountdownTimer";
+import ShareEvent from "./ShareEvent";
+import heroBg from "@/assets/hero-bg.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
