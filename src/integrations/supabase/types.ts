@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      orders: {
+        Row: {
+          buyer_name: string
+          created_at: string
+          currency: string
+          email: string
+          id: string
+          note: string | null
+          order_number: string
+          phone: string
+          promo_code: string | null
+          quantity: number
+          sector_name: string
+          status: string
+          stripe_session_id: string | null
+          total_amount: number
+          updated_at: string
+        }
+        Insert: {
+          buyer_name: string
+          created_at?: string
+          currency?: string
+          email: string
+          id?: string
+          note?: string | null
+          order_number: string
+          phone: string
+          promo_code?: string | null
+          quantity?: number
+          sector_name: string
+          status?: string
+          stripe_session_id?: string | null
+          total_amount: number
+          updated_at?: string
+        }
+        Update: {
+          buyer_name?: string
+          created_at?: string
+          currency?: string
+          email?: string
+          id?: string
+          note?: string | null
+          order_number?: string
+          phone?: string
+          promo_code?: string | null
+          quantity?: number
+          sector_name?: string
+          status?: string
+          stripe_session_id?: string | null
+          total_amount?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       sectors: {
         Row: {
           available: boolean
