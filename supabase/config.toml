@@ -1,9 +1,6 @@
 project_id = "yximxqmoqhvdkddbhzsw"
 
-[functions.create-checkout]
-verify_jwt = false
-
-[functions.get-stripe-price]
+[functions.get-paddle-price]
 verify_jwt = false
 
 [functions.payments-webhook]

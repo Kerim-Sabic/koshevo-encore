@@ -23,6 +23,7 @@ export type Database = {
           id: string
           note: string | null
           order_number: string
+          paddle_transaction_id: string | null
           phone: string
           promo_code: string | null
           quantity: number
@@ -40,6 +41,7 @@ export type Database = {
           id?: string
           note?: string | null
           order_number: string
+          paddle_transaction_id?: string | null
           phone: string
           promo_code?: string | null
           quantity?: number
@@ -57,6 +59,7 @@ export type Database = {
           id?: string
           note?: string | null
           order_number?: string
+          paddle_transaction_id?: string | null
           phone?: string
           promo_code?: string | null
           quantity?: number
@@ -72,31 +75,40 @@ export type Database = {
         Row: {
           available: boolean
           badge: string | null
+          capacity: number | null
           description: string
           id: string
           max_per_order: number
           name: string
+          paddle_price_id: string | null
           price: number
+          sold_count: number
           updated_at: string
         }
         Insert: {
           available?: boolean
           badge?: string | null
+          capacity?: number | null
           description: string
           id: string
           max_per_order?: number
           name: string
+          paddle_price_id?: string | null
           price: number
+          sold_count?: number
           updated_at?: string
         }
         Update: {
           available?: boolean
           badge?: string | null
+          capacity?: number | null
           description?: string
           id?: string
           max_per_order?: number
           name?: string
+          paddle_price_id?: string | null
           price?: number
+          sold_count?: number
           updated_at?: string
         }
         Relationships: []
