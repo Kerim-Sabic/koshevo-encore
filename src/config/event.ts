@@ -24,6 +24,9 @@ export interface Sector {
   badge?: string;
   available: boolean;
   maxPerOrder: number;
+  paddlePriceId?: string;
+  soldCount?: number;
+  capacity?: number;
 }
 
 export const SECTORS: Sector[] = [

@@ -12,7 +12,6 @@ export const useSectors = () => {
         .order("price", { ascending: false });
 
       if (error || !data || data.length === 0) {
-        // Fallback to config if DB not available
         return SECTORS;
       }
 
@@ -24,6 +23,9 @@ export const useSectors = () => {
         badge: s.badge ?? undefined,
         available: s.available,
         maxPerOrder: s.max_per_order,
+        paddlePriceId: s.paddle_price_id ?? undefined,
+        soldCount: s.sold_count ?? 0,
+        capacity: s.capacity ?? undefined,
       }));
     },
     staleTime: 30_000,

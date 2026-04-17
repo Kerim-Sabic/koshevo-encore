@@ -9,25 +9,16 @@ import TrustSection from "@/components/TrustSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import Checkout from "@/components/Checkout";
-import Confirmation from "@/components/Confirmation";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import { PaymentTestModeBanner } from "@/components/PaymentTestModeBanner";
 import { type Sector } from "@/config/event";
-
-interface OrderData {
-  orderNumber: string;
-  buyerName: string;
-  email: string;
-  sector: string;
-  quantity: number;
-  total: number;
-}
 
 const Index = () => {
   const [checkout, setCheckout] = useState<{ sector: Sector; quantity: number } | null>(null);
-  const [order, setOrder] = useState<OrderData | null>(null);
 
   return (
     <div className="min-h-screen bg-background">
+      <PaymentTestModeBanner />
       <Hero />
       <EventInfoStrip />
       <SectorSelection onProceed={(sector, quantity) => setCheckout({ sector, quantity })} />
@@ -39,16 +30,12 @@ const Index = () => {
       <MobileBottomBar />
 
       <AnimatePresence>
-        {checkout && !order && (
+        {checkout && (
           <Checkout
             sector={checkout.sector}
             quantity={checkout.quantity}
             onClose={() => setCheckout(null)}
-            onComplete={(o) => { setOrder(o); setCheckout(null); }}
           />
-        )}
-        {order && (
-          <Confirmation order={order} onClose={() => setOrder(null)} />
         )}
       </AnimatePresence>
     </div>
