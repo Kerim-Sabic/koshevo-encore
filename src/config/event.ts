@@ -93,7 +93,7 @@ export const FAQ_ITEMS = [
   },
   {
     question: "Are tickets refundable?",
-    answer: "Tickets are non-refundable except in cases where the event is officially cancelled. If the event is postponed, your tickets remain valid for the rescheduled date. Please review our full refund policy for details.",
+    answer: "Yes. We offer a 30-day money-back guarantee on all ticket purchases. Refunds are processed by our payment provider, Paddle — visit paddle.net or contact our support team to request one. If the event is cancelled, all tickets are refunded automatically; if it is postponed, tickets remain valid for the new date.",
   },
   {
     question: "What happens if the event is postponed?",
